@@ -3,6 +3,11 @@
 
 class PID {
  public:
+  double prev_cte;
+  long counter;
+  double errorSum;
+  double minError;
+  double maxError;
   /**
    * Constructor
    */
@@ -31,6 +36,8 @@ class PID {
    */
   double TotalError();
 
+    
+    
  private:
   /**
    * PID Errors
@@ -38,13 +45,15 @@ class PID {
   double p_error;
   double i_error;
   double d_error;
-
+  
   /**
    * PID Coefficients
    */ 
   double Kp;
   double Ki;
   double Kd;
+  
+  
 };
 
 #endif  // PID_H
