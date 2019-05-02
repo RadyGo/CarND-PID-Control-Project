@@ -105,3 +105,20 @@ A well written README file can enhance your project and portfolio.  Develop your
 - The integral portion is used to eliminate the residual error. It often used with proportional.If used alone, it makes the car to go in circles. check this video to see what happend: [only_i.mov](https://github.com/hanxiaomax/CarND-PID-Control-Project/tree/master/videos/only_i.mov)
 
 - The differential portion reduces the overshoot and oscillations. In turn, this permits a higher value to be used for the controller gain, which increases the speed of response.If used alone, check this video to see what happend: [only_d.mov](https://github.com/hanxiaomax/CarND-PID-Control-Project/tree/master/videos/only_d.mov)
+
+### Describe how the final hyperparameters were chosen.
+
+The parameters were chosen manually
+
+firstly, I tried serval common models of PID controller as follow:
+
+P – Sometimes used
+PI - Most often used
+PID – Sometimes used
+PD – rare as hen’s teeth but can be useful for controlling servomotors.
+
+than I choose to use PI or PD and start to turn the parameters:
+- add P to make the car try to stay around the central line
+- add D to overcome the overshooting
+
+the final choose is `pid.Init(0.1, 0, 2.5);`
