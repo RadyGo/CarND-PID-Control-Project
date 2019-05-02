@@ -96,3 +96,12 @@ still be compilable with cmake and make./
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
+## Discussion
+
+### describes the effect of the P, I, D component of the PID algorithm in their implementation. Is it what you expected?
+
+- The proportional portion of the controller is trying to keep the cat at the center line. But proportional will produce residual error so if it used alone, the car will swing along the central line  and deviate more and more, and go out of the road very quickly. check this video to see what happend: ./videos/only_p.mov.
+
+- The integral portion is used to eliminate the residual error. It often used with proportional.If used alone, it makes the car to go in circles. check this video to see what happend: ./videos/only_i.mov.
+
+- The differential portion reduces the overshoot and oscillations. In turn, this permits a higher value to be used for the controller gain, which increases the speed of response.If used alone, check this video to see what happend: ./videos/only_d.mov.
